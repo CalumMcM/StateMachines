@@ -6,15 +6,15 @@
 
 
 
-int count;
+int count; //The global variabel that will be accessed by the threads
 
 std::mutex mtx;
 
-void increment(int numIncrementsPerThread, int curThread){
+void increment(int numIncrementsPerThread, int curThread){ //The thread that iterates the global variable
     //Removed the locking of the global variable count
     std::cout << "Thread " << curThread + 1 << " read count" << std::endl;
-    if (curThread % 2 == 0){
-        std::this_thread::sleep_for (std::chrono::seconds(1)); //By cutting out the even files and making them sleep it oputs the system out of sync
+    if (curThread % 2 == 0){//By cutting out the even files and making them sleep it oputs the system out of sync
+        std::this_thread::sleep_for (std::chrono::seconds(1)); 
     }
     count += numIncrementsPerThread;
     std::cout << "Thread " << curThread + 1 << " incremented count" << std::endl;
