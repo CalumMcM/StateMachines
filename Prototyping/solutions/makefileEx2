@@ -1,0 +1,2 @@
+1prototype: Excercise_2.cpp
+	g++ -std=c++11 Excercise_2.cpp -lpthread -o Excercise_2
