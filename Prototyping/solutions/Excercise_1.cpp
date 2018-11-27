@@ -32,7 +32,7 @@ int main(){
     for(curThread =0; curThread < numThreads; ++curThread){
         allThreads[curThread] = std::thread(increment, numIncrementsPerThread, curThread); //spawn new thread
     }
-    
+
     for (curThread = 0; curThread< numThreads; ++curThread){ //Waits for the specified number of threads to join
         allThreads[curThread].join();
     }
